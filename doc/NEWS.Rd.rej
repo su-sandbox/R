@@ -1,0 +1,23 @@
+***************
+*** 130,135 ****
+        (\emph{inter alia} providing a means to check for sites using
+        deprecated TLS versions 1.0 and 1.1).
+  
+        \item For \code{nls()}, an optional constant \code{scaleOffset}
+        may be added to the denominator of the relative offset convergence
+        test for cases where the fit of a model is expected to be exact,
+--- 130,143 ----
+        (\emph{inter alia} providing a means to check for sites using
+        deprecated TLS versions 1.0 and 1.1).
+  
++       \item \code{socketConnection()} and \code{socketAccept()} have a new
++       argument \code{options} which allows socket-specific options to
++       be set. It defaults to \code{getOption("socketOptions")}.
++       Currently only one option \code{"no-delay"} is implemented which
++       enables the \code{TCP_NODELAY} option on the socket. Options are
++       considered optional so no error is issued if the operating
++       system does not support or honor the option.
++ 
+        \item For \code{nls()}, an optional constant \code{scaleOffset}
+        may be added to the denominator of the relative offset convergence
+        test for cases where the fit of a model is expected to be exact,
